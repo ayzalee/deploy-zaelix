@@ -1,7 +1,11 @@
 {
   "name": "Zaelix",
   "description": "A WhatsApp bot built with Go and whatsmeow",
-  "keywords": ["go", "whatsapp", "bot"],
+  "keywords": [
+    "go",
+    "whatsapp",
+    "bot"
+  ],
   "repository": "https://github.com/ayzalee/deploy-zaelix",
   "stack": "container",
   "env": {
@@ -12,6 +16,11 @@
     },
     "SUDO": {
       "description": "Your phone number, international format, no +",
+      "required": false,
+      "value": ""
+    },
+    "BOT_NUMBER": {
+      "description": "Phone number to pair the bot with (international format, no +) \u2014 required for first deploy since there is no CLI access for --phone-number",
       "required": false,
       "value": ""
     },
@@ -53,7 +62,7 @@
     "STATUS_VIEW_EMOJI": {
       "description": "Emojis used to react to viewed statuses",
       "required": false,
-      "value": "❤️,🪻,🤍,🎐,🌸,💫"
+      "value": "\u2764\ufe0f,\ud83e\udebb,\ud83e\udd0d,\ud83c\udf90,\ud83c\udf38,\ud83d\udcab"
     },
     "YT_COOKIE": {
       "description": "YouTube cookie string for yt-dlp (optional)",
@@ -77,7 +86,9 @@
     }
   },
   "addons": [
-    { "plan": "heroku-postgresql:essential-0" }
+    {
+      "plan": "heroku-postgresql:essential-0"
+    }
   ],
   "buildpacks": [],
   "formation": {
