@@ -1,0 +1,28 @@
+{
+  "name": "Zaelix",
+  "description": "A WhatsApp bot built with Go and whatsmeow",
+  "keywords": ["go", "whatsapp", "bot"],
+  "repository": "https://github.com/ayzalee/deploy-zaelix",
+  "stack": "container",
+  "env": {
+    "BOT_PREFIX": { "description": "Command prefix for the bot", "required": false, "value": "." },
+    "SUDO": { "description": "Your phone number, international format, no +", "required": false, "value": "" },
+    "BOT_MODE": { "description": "public or private", "required": false, "value": "public" },
+    "BOT_LANG": { "description": "Bot language code", "required": false, "value": "en" },
+    "ALWAYS_ONLINE": { "description": "Show bot as always online", "required": false, "value": "false" },
+    "AUTO_STATUS_VIEW": { "description": "Auto view contacts' statuses", "required": false, "value": "false" },
+    "CALL_REJECT": { "description": "Auto reject incoming calls", "required": false, "value": "false" },
+    "READ_MSGS": { "description": "Auto mark messages as read", "required": false, "value": "false" },
+    "ANTI_DELETE": { "description": "Forward deleted messages", "required": false, "value": "false" },
+    "STATUS_VIEW_EMOJI": { "description": "Emojis used to react to viewed statuses", "required": false, "value": "❤️,🪻,🤍,🎐,🌸,💫" },
+    "YT_COOKIE": { "description": "YouTube cookie string for yt-dlp (optional)", "required": false, "value": "" },
+    "TZ": { "description": "Timezone for menu/uptime display", "required": false, "value": "UTC" }
+  },
+  "addons": [
+    { "plan": "heroku-postgresql:essential-0" }
+  ],
+  "buildpacks": [],
+  "formation": {
+    "worker": { "quantity": 1, "size": "eco" }
+  }
+}
