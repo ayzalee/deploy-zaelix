@@ -90,7 +90,6 @@
       "plan": "heroku-postgresql:essential-0"
     }
   ],
-  "buildpacks": [],
   "formation": {
     "worker": {
       "quantity": 1,
